@@ -56,6 +56,35 @@ export const constantRoutes = [
   },
 
   {
+    path: '/yygh/hospset',
+    component: Layout,
+    redirect: '/yygh/hospset/list',
+    name: 'hosp',
+    meta: { title: '医院管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: '医院设置列表',
+        component: () => import('@/views/yygh/hospset/list'),
+        meta: { title: '医院设置列表', icon: 'table' }
+      },
+      {
+        path: 'add',
+        name: '医院设置表单',
+        component: () => import('@/views/yygh/hospset/add'),
+        meta: { title: '添加医院设置', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: 'HospSetEdit',
+        component: () => import('@/views/yygh/hospset/add'),
+        meta: { title: '编辑医院设置', noCache: true },
+        hidden: true
+      }
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
