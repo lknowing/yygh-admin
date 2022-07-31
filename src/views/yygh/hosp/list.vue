@@ -126,7 +126,7 @@ export default {
       searchObj: {
         provinceCode: "",
         cityCode: "",
-      }, // 查询表单对象
+      }, // 查询表单对象，有下拉选择框要初始化数据
       provinceList: [], //所有省集合
       cityList: [], //所有市集合
     };

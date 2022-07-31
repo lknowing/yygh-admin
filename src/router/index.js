@@ -122,6 +122,36 @@ export const constantRoutes = [
   },
 
   {
+    path: '/user',
+    component: Layout,
+    redirect: '/user/userInfo/list',
+    name: 'userInfo',
+    meta: { title: '用户管理', icon: 'table' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'userInfo/list',
+        name: '用户列表',
+        component: () => import('@/views/yygh/user/userInfo/list'),
+        meta: { title: '用户列表', icon: 'table' }
+      },
+      {
+        path: 'userInfo/show/:id',
+        name: '用户查看',
+        component: () => import('@/views/yygh/user/userInfo/show'),
+        meta: { title: '用户查看' },
+        hidden: true //隐藏路由
+      },
+      {
+        path: 'userInfo/authList',
+        name: '认证审批列表',
+        component: () => import('@/views/yygh/user/userInfo/authList'),
+        meta: { title: '认证审批列表', icon: 'table' }
+      }
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
